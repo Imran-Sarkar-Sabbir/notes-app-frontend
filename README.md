@@ -3,7 +3,7 @@
 Plain React + Vite frontend for the Notes API. Styling is minimal on purpose. The task is
 about the backend.
 
-- Live: `<add Vercel/Netlify URL>`
+- Live: `<add Render URL>`
 - Backend repo: `<add link>`
 
 ## Running it
@@ -27,6 +27,9 @@ The token is stored in `localStorage`. A 401 from the API logs you out.
 
 ## Deploying
 
-Vercel or Netlify, framework preset Vite, env var `VITE_API_URL` set to the deployed API.
-`vercel.json` and `public/_redirects` send every path to `index.html`, so a refresh on
-`/admin/users` doesn't 404.
+Render static site:
+
+- Build command: `npm ci && npm run build`
+- Publish directory: `dist`
+- Env var: `VITE_API_URL` set to the deployed API (read at build time, so redeploy after changing it)
+- Redirects/Rewrites: rewrite `/*` to `/index.html`, so a refresh on `/admin/users` doesn't 404
